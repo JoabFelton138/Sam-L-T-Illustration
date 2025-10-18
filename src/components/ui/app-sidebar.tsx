@@ -9,7 +9,9 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
   } from "@/components/ui/sidebar"
+import { InstagramIcon, TwitterIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
    
   export function AppSidebar() {
     
@@ -35,11 +37,13 @@ import Image from "next/image";
             url: "/contact",
         }
     ];
+
+    const textHover = "hover:text-[#2C3E50]";
+    const socialIconClasses = `${textHover} size-5 text-[#3AB7B0]`;
     
     return (
-      <Sidebar className="w-[17rem] sm:w-[15rem] pt-12">
+      <Sidebar className="w-[17rem] sm:w-[15rem] p-12 flex flex-col items-center">
         <SidebarHeader>
-            <div className="flex items-center justify-center">
                 <Image 
                     src="/sams-logo.webp"
                     alt="Sam L-T Illustration Logo"
@@ -48,28 +52,36 @@ import Image from "next/image";
                     className="object-contain"
                     loading="eager"
                 />
-            </div>
         </SidebarHeader>
         <SidebarContent>
           <SidebarGroup>
           <SidebarGroupContent >
-            <div className="flex justify-center">
                 <SidebarMenu className="w-auto">
                     {items.map((item) => (
                         <SidebarMenuItem key={item.title}>
-                            <SidebarMenuButton asChild>
-                            <a href={item.url} className="tracking-widest font-medium text-[13px] text-[#3AB7B0]">
+                            <SidebarMenuButton asChild className={`${textHover} hover:bg-transparent`}>
+                            <a href={item.url} 
+                               className="tracking-widest font-medium text-[13px] text-[#3AB7B0]"
+                            >
                                 {item.title.toUpperCase()}
                             </a>
                             </SidebarMenuButton>
                         </SidebarMenuItem>
                     ))}
                 </SidebarMenu>
-            </div>
             </SidebarGroupContent>
           </SidebarGroup>
         </SidebarContent>
-        <SidebarFooter />
+        <SidebarFooter>
+            <div className="flex flex-row gap-3">
+                <Link href="">
+                    <InstagramIcon className={socialIconClasses}/>
+                </Link>
+                <Link href="">
+                    <TwitterIcon className={socialIconClasses}/>
+                </Link>
+            </div>
+        </SidebarFooter>
       </Sidebar>
     )
   }
