@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sam Talbot's Portfolio",
+  title: "Sam L-T Illustration",
   description: "Showcasing artwork and providing contact information.",
+  
 };
 
 export default function RootLayout({
