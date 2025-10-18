@@ -37,7 +37,7 @@ import Image from "next/image";
     ];
     
     return (
-      <Sidebar>
+      <Sidebar className="w-[17rem] sm:w-[15rem]">
         <SidebarHeader>
             <div className="flex items-center justify-center">
                 <Image 
