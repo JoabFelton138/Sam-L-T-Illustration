@@ -37,28 +37,28 @@ import Image from "next/image";
     ];
     
     return (
-      <Sidebar className="w-[17rem] sm:w-[15rem]">
+      <Sidebar className="w-[17rem] sm:w-[15rem] pt-12">
         <SidebarHeader>
             <div className="flex items-center justify-center">
                 <Image 
                     src="/sams-logo.webp"
                     alt="Sam L-T Illustration Logo"
-                    width={120}
-                    height={60}
+                    width={150}
+                    height={90}
                     className="object-contain"
                     loading="eager"
                 />
             </div>
         </SidebarHeader>
         <SidebarContent>
-          <SidebarGroup >
+          <SidebarGroup>
           <SidebarGroupContent >
             <div className="flex justify-center">
                 <SidebarMenu className="w-auto">
                     {items.map((item) => (
                         <SidebarMenuItem key={item.title}>
                             <SidebarMenuButton asChild>
-                            <a href={item.url}>
+                            <a href={item.url} className="tracking-widest font-medium text-[13px] text-[#3AB7B0]">
                                 {item.title.toUpperCase()}
                             </a>
                             </SidebarMenuButton>
