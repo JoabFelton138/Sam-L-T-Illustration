@@ -38,48 +38,56 @@ import Link from "next/link";
         }
     ];
 
+    const CenteredWrapper = ({children, className = ""}: {children:React.ReactNode, className?: string}) => (
+        <div className={`flex items-center justify-center ${className}`}>
+            {children}
+        </div>
+    );
+
     const textHover = "hover:text-brand-hover hover:bg-transparent";
     const socialIconClasses = `${textHover} size-5 text-brand`;
     
     return (
-      <Sidebar 
-        className="w-[17rem] sm:w-[15rem] p-12 flex flex-col items-center gap-2"
-        >
+      <Sidebar className="w-[17rem] sm:w-[15rem] !py-12">
         <SidebarHeader>
-            <Image 
-                src="/sams-logo.webp"
-                alt="Sam L-T Illustration Logo"
-                width={150}
-                height={90}
-                loading="eager"
-            />
+            <CenteredWrapper>
+                <Image 
+                    src="/sams-logo.webp"
+                    alt="Sam L-T Illustration Logo"
+                    width={140}
+                    height={80}
+                    loading="eager"
+                />
+            </CenteredWrapper>
         </SidebarHeader>
         <SidebarContent>
           <SidebarGroup>
           <SidebarGroupContent >
                 <SidebarMenu className="w-auto">
-                    {items.map((item) => (
-                        <SidebarMenuItem key={item.title}>
-                            <SidebarMenuButton asChild className={`${textHover}`}>
-                                <a href={item.url} className="tracking-widest font-medium text-[13px] text-brand">
-                                    {item.title.toUpperCase()}
-                                </a>
-                            </SidebarMenuButton>
-                        </SidebarMenuItem>
-                    ))}
+                    <CenteredWrapper className="flex-col">
+                        {items.map((item) => (
+                            <SidebarMenuItem key={item.title}>
+                                <SidebarMenuButton asChild className={`${textHover}`}>
+                                    <a href={item.url} className="tracking-widest font-medium text-[13px] text-brand">
+                                        {item.title.toUpperCase()}
+                                    </a>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                        ))}
+                    </CenteredWrapper>
                 </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
         </SidebarContent>
         <SidebarFooter>
-            <div className="flex flex-row gap-3">
-                <Link href="">
-                    <InstagramIcon className={socialIconClasses}/>
-                </Link>
-                <Link href="">
-                    <TwitterIcon className={socialIconClasses}/>
-                </Link>
-            </div>
+            <CenteredWrapper className="flex-row gap-3">
+                    <Link href="">
+                        <InstagramIcon className={socialIconClasses}/>
+                    </Link>
+                    <Link href="">
+                        <TwitterIcon className={socialIconClasses}/>
+                    </Link>
+            </CenteredWrapper>
         </SidebarFooter>
       </Sidebar>
     )
