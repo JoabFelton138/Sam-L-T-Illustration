@@ -39,7 +39,7 @@ export default function RootLayout({
         <SidebarProvider>
           <AppSidebar />
             <main className="w-full">
-              <div className="p-4 flex flex-row justify-between w-full">                <Image 
+              <div className="md:hidden p-4 flex flex-row justify-between w-full">                <Image 
                   src="/sams-logo.webp" 
                   alt="Sam Leatham-Talbot" 
                   width={80} 

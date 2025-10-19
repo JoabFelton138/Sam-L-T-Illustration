@@ -51,7 +51,6 @@ import Link from "next/link";
                 alt="Sam L-T Illustration Logo"
                 width={150}
                 height={90}
-                className="object-contain"
                 loading="eager"
             />
         </SidebarHeader>
@@ -62,11 +61,9 @@ import Link from "next/link";
                     {items.map((item) => (
                         <SidebarMenuItem key={item.title}>
                             <SidebarMenuButton asChild className={`${textHover}`}>
-                            <a href={item.url} 
-                               className="tracking-widest font-medium text-[13px] text-brand"
-                            >
-                                {item.title.toUpperCase()}
-                            </a>
+                                <a href={item.url} className="tracking-widest font-medium text-[13px] text-brand">
+                                    {item.title.toUpperCase()}
+                                </a>
                             </SidebarMenuButton>
                         </SidebarMenuItem>
                     ))}
