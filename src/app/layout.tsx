@@ -3,6 +3,7 @@ import { Nunito, Nunito_Sans, Quicksand } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/ui/app-sidebar";
+import Image from "next/image";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -35,13 +36,23 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${nunito.variable} ${nunitoSans.variable} antialiased`}
       >
-         <SidebarProvider>
-         <AppSidebar />
-         <main>
-          <SidebarTrigger />
-          {children}
-         </main>
-         </SidebarProvider>
+        <SidebarProvider>
+          <AppSidebar />
+            <main className="w-full">
+              <div className="p-4 flex flex-row justify-between w-full">                <Image 
+                  src="/sams-logo.webp" 
+                  alt="Sam Leatham-Talbot" 
+                  width={80} 
+                  height={80} 
+                />
+                <SidebarTrigger 
+                  className="text-brand hover:text-brand-hover hover:bg-transparent cursor-pointer size-7"
+                />
+              </div>
+
+              {children}
+            </main>
+        </SidebarProvider>
       </body>
     </html>
   );
