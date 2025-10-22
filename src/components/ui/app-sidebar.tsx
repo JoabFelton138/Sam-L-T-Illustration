@@ -45,7 +45,7 @@ import Link from "next/link";
     );
 
     const textHover = "hover:text-brand-hover hover:bg-transparent";
-    const socialIconClasses = `${textHover} size-5 text-brand`;
+    const socialIconClasses = `${textHover} size-[14px] h-[14px] sm:size-4 text-brand`;
     
     return (
       <Sidebar className="sm:w-[15rem] py-12">
@@ -57,6 +57,7 @@ import Link from "next/link";
                     width={120}
                     height={60}
                     loading="eager"
+                    className="w-24 h-12 sm:w-28 sm:h-14 md:w-32 md:h-16"
                 />
             </CenteredWrapper>
         </SidebarHeader>
@@ -68,7 +69,7 @@ import Link from "next/link";
                         {items.map((item) => (
                             <SidebarMenuItem key={item.title}>
                                 <SidebarMenuButton asChild className={`${textHover}`}>
-                                    <a href={item.url} className="tracking-widest font-medium text-[13px] text-brand">
+                                    <a href={item.url} className="tracking-widest font-medium text-[11px] sm:text-xs md:text-[13px] text-brand">
                                         {item.title.toUpperCase()}
                                     </a>
                                 </SidebarMenuButton>
