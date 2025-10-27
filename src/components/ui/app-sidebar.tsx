@@ -42,8 +42,8 @@ import Link from "next/link";
     const socialIconClasses = `${textHover} size-[14px] h-[14px] sm:size-4 text-brand`;
     
     return (
-      <Sidebar className="sm:w-[15rem] py-12">
-        <SidebarHeader className="pb-2">
+      <Sidebar className="sm:w-[15rem] py-14 px-8">
+        <SidebarHeader>
             <Image 
                 src="/sams-logo.webp"
                 alt="Sam L-T Illustration Logo"
@@ -53,7 +53,7 @@ import Link from "next/link";
                 className="w-24 h-12 sm:w-28 sm:h-14 md:w-32 md:h-16"
             />
         </SidebarHeader>
-        <SidebarContent>
+        <SidebarContent className="pt-4">
           <SidebarGroup>
             <SidebarGroupContent >
                 <SidebarMenu className="w-auto">
