@@ -128,6 +128,21 @@
     @apply text-sm sm:text-[15px] md:text-base;
     color: var(--brand-color-hover);
   }
+  h2 {
+    font-family: var(--font-rock-salt);
+    font-weight: 600;
+    color: var(--brand-color-hover);
+    @apply text-3xl md:text-4xl;
+  }
+  h2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    margin-top: 0.5rem;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='10'><path d='M0,5 C30,0 60,10 90,5 C120,0 150,10 180,5' stroke='%23f57c00' stroke-width='5' fill='none' stroke-linecap='round' /></svg>") no-repeat;
+    background-size: cover;
+  }
 }
 
 [data-mobile="true"] {

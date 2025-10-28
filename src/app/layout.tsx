@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito, Nunito_Sans, Quicksand } from "next/font/google";
+import { Nunito, Nunito_Sans, Quicksand, Rock_Salt } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/ui/app-sidebar";
@@ -20,6 +20,12 @@ const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
 });
 
+const rockSalt = Rock_Salt({
+  variable: "--font-rock-salt",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "Sam L-T Illustration",
   description: "Showcasing artwork and providing contact information.",
@@ -34,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${quicksand.variable} ${nunito.variable} ${nunitoSans.variable} antialiased font-sans`}
+        className={`${quicksand.variable} ${nunito.variable} ${nunitoSans.variable} ${rockSalt.variable} antialiased font-sans`}
       >
         <SidebarProvider>
           <AppSidebar />
