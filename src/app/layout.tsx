@@ -41,7 +41,7 @@ export default function RootLayout({
             <main className="w-full">
               <div className="md:hidden p-4 flex flex-row justify-between w-full">                <Image 
                   src="/sams-logo.webp" 
-                  alt="Sam Leatham-Talbot" 
+                  alt="Sam Latham-Talbot" 
                   width={80} 
                   height={80} 
                 />
