@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${quicksand.variable} ${nunito.variable} ${nunitoSans.variable} antialiased`}
+        className={`${quicksand.variable} ${nunito.variable} ${nunitoSans.variable} antialiased font-sans`}
       >
         <SidebarProvider>
           <AppSidebar />
