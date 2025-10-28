@@ -124,7 +124,10 @@
   body {
     @apply bg-background text-foreground;
   }
-  p { @apply text-sm sm:text-[15px] md:text-base; }
+  p { 
+    @apply text-sm sm:text-[15px] md:text-base;
+    color: var(--brand-color-hover);
+  }
 }
 
 [data-mobile="true"] {
