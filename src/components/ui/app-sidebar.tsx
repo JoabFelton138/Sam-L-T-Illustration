@@ -45,12 +45,11 @@ import Link from "next/link";
       <Sidebar className="sm:w-[15rem] py-14 px-8">
         <SidebarHeader>
             <Image 
-                src="/sams-logo.webp"
+                src="/sams-logo-temp.webp"
                 alt="Sam L-T Illustration Logo"
                 width={120}
                 height={60}
                 loading="eager"
-                className="w-24 h-12 sm:w-28 sm:h-14 md:w-32 md:h-16"
             />
         </SidebarHeader>
         <SidebarContent className="pt-4">
