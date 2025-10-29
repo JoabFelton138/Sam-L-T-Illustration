@@ -1,36 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { InstagramIcon } from "lucide-react";
-
-const menuItems = [
-    {
-        title: "Artwork",
-        url: "/artwork",
-    },
-    {
-        title: "Photography",
-        url: "/photography",
-    },
-    {
-        title: "About",
-        url: "/about",
-    },
-    {
-        title: "Shop",
-        url: "/shop",
-    },
-    {
-        title: "Contact",
-        url: "/contact",
-    },
-]
+import { menuItems } from "@/lib/constants";
 
 const textHover = "hover:text-brand-hover hover:bg-transparent";
 const socialIconClasses = `${textHover} size-[14px] h-[14px] sm:size-4 text-brand`;
 
 export function Navbar() {
     return (
-            <div className="flex flex-col justify-center items-center space-y-8 py-10">    
+            <div className="flex flex-col justify-center items-center space-y-8 py-6">    
                 <Image 
                     src="/sams-logo-temp.webp"
                     alt="Sam L-T Illustration Logo"
@@ -38,7 +16,7 @@ export function Navbar() {
                     height={50}
                     loading="eager"
                 /> 
-                <div className="flex flex-row gap-6">
+                <div className="flex flex-row gap-8">
                     {menuItems.map((item) => 
                         <Link 
                             key={item.title} 
@@ -48,7 +26,7 @@ export function Navbar() {
                         </Link>
                     )}
                 </div>
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-row gap-5">
                     <Link href="https://www.instagram.com/samlt_illustration/">
                         <InstagramIcon className={socialIconClasses} />
                     </Link>

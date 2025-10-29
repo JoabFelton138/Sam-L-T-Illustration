@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Nunito, Nunito_Sans, Quicksand, Rock_Salt } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
+import { MobileNav } from "@/components/mobile-nav";
+import { ResponsiveNav } from "@/components/responsive-nav";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -40,7 +42,7 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${nunito.variable} ${nunitoSans.variable} ${rockSalt.variable} antialiased font-sans`}
       >
-        <Navbar />
+        <ResponsiveNav />
         {children}
       </body>
     </html>

@@ -5,9 +5,9 @@ export default function About() {
         <main>
             <header>
             </header>
-            <section className="grid px-6 py-14">                
+            <section className="grid px-6 py-12">                
                 <div className="grid grid-cols-1 xl:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">                
-                    <Image src="/feed-phil.webp" alt="Feed Phil" width={600} height={400} />
+                    <Image src="/feed-phil.webp" alt="Feed Phil" width={550} height={350} />
                     <div className="space-y-4 max-w-[600px]">
                         <h2>{`Hey, I'm Sam!`}</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae sapien nec justo tincidunt tincidunt. Integer euismod, nisl a fermentum tincidunt, sapien justo convallis nulla, nec facilisis lorem justo at erat. Sed in efficitur sapien. Suspendisse potenti. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
