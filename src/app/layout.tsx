@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito, Nunito_Sans, Quicksand, Rock_Salt } from "next/font/google";
 import "./globals.css";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/ui/app-sidebar";
-import Image from "next/image";
+import { Navbar } from "@/components/navbar";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -42,23 +40,8 @@ export default function RootLayout({
       <body
         className={`${quicksand.variable} ${nunito.variable} ${nunitoSans.variable} ${rockSalt.variable} antialiased font-sans`}
       >
-        <SidebarProvider>
-          <AppSidebar />
-            <main className="w-full">
-              <div className="md:hidden p-4 flex flex-row justify-between w-full">                <Image 
-                  src="/sams-logo.webp" 
-                  alt="Sam Latham-Talbot" 
-                  width={80} 
-                  height={80} 
-                />
-                <SidebarTrigger 
-                  className="text-brand hover:text-brand-hover hover:bg-transparent cursor-pointer size-7"
-                />
-              </div>
-
-              {children}
-            </main>
-        </SidebarProvider>
+        <Navbar />
+        {children}
       </body>
     </html>
   );
