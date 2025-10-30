@@ -2,7 +2,7 @@ import Image from "next/image";
 import { menuItems } from "@/lib/constants";
 import Link from "next/link";
 import { MenuIcon } from "lucide-react";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
 import { SocialIcons } from "./social-icons";
 
 export function MobileNav() {
