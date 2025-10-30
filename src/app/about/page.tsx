@@ -3,8 +3,6 @@ import Image from "next/image";
 export default function About() {
     return (
         <main>
-            <header>
-            </header>
             <section className="grid px-6 py-12">                
                 <div className="grid grid-cols-1 xl:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">                
                     <Image src="/phil/feed-phil-orange.webp" className="justify-self-center rounded" alt="Feed Phil" width={500} height={300} />
