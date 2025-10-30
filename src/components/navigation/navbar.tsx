@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { menuItems } from "@/lib/constants";
+import { menuItems } from "@/lib/links";
 import { SocialIcons } from "./social-icons";
 
 export function Navbar() {

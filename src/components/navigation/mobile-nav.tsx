@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { menuItems } from "@/lib/constants";
+import { menuItems } from "@/lib/links";
 import Link from "next/link";
 import { MenuIcon } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
