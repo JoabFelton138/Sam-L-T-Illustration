@@ -132,7 +132,7 @@
     font-family: var(--font-rock-salt);
     font-weight: 600;
     color: var(--brand-color-hover);
-    @apply text-2xl md:text-3xl;
+    @apply text-xl md:text-2xl;
   }
   h2::after {
     content: '';
@@ -147,4 +147,17 @@
 
 [data-mobile="true"] {
   padding: 4rem 3rem;
+}
+
+/* Quatrefoil/clover image mask utilities */
+@layer utilities {
+  .mask-quatrefoil {
+    -webkit-mask: url("/masks/quatrefoil.svg") center / contain no-repeat;
+            mask: url("/masks/quatrefoil.svg") center / contain no-repeat;
+  }
+
+  /* Creates a visible border by masking both wrapper and inner with padding */
+  .quatrefoil-border {
+    background-color: white; /* Use Tailwind bg-* on element to customize */
+  }
 }
