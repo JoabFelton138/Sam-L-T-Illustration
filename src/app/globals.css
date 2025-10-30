@@ -148,16 +148,3 @@
 [data-mobile="true"] {
   padding: 4rem 3rem;
 }
-
-/* Quatrefoil/clover image mask utilities */
-@layer utilities {
-  .mask-quatrefoil {
-    -webkit-mask: url("/masks/quatrefoil.svg") center / contain no-repeat;
-            mask: url("/masks/quatrefoil.svg") center / contain no-repeat;
-  }
-
-  /* Creates a visible border by masking both wrapper and inner with padding */
-  .quatrefoil-border {
-    background-color: white; /* Use Tailwind bg-* on element to customize */
-  }
-}
