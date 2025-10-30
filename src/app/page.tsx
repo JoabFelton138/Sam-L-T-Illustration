@@ -1,6 +1,9 @@
+import { LightboxGallery } from "@/components/LightboxGallery";
+
 export default function Home() {
   return (
-    <div>
-    </div>
+    <>
+        <LightboxGallery content="illustrations" />
+    </>
   );
 }
