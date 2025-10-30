@@ -45,7 +45,7 @@ import Link from "next/link";
       <Sidebar className="sm:w-[15rem] py-14 px-8">
         <SidebarHeader>
             <Image 
-                src="/sams-logo-temp.webp"
+                src="/logos/sams-logo-temp.webp"
                 alt="Sam L-T Illustration Logo"
                 width={120}
                 height={60}

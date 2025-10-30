@@ -7,7 +7,7 @@ export function Navbar() {
     return (
             <div className="flex flex-col justify-center items-center space-y-8 py-6">    
                 <Image 
-                    src="/sams-logo-temp.webp"
+                    src="/logos/sams-logo-temp.webp"
                     alt="Sam L-T Illustration Logo"
                     width={100}
                     height={50}
