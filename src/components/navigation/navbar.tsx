@@ -15,7 +15,7 @@ export function Navbar() {
                         loading="eager"
                     /> 
                 </Link>
-                <div className="flex flex-row gap-8">
+                <div className="flex flex-row gap-15">
                     {menuItems.map((item) => 
                         <Link 
                             key={item.title} 
