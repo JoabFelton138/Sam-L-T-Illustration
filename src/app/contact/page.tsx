@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 export default function Contact() {
     return (
         <main>
-            <form className="max-w-lg mx-auto py-12">
+            <form className="max-w-lg mx-auto px-5 sm:px-6 lg:px-8 py-6 sm:py-5">
                 <FieldSet>
                     <FieldLegend className="sr-only">
                         Contact Form
@@ -15,7 +15,7 @@ export default function Contact() {
                         <h2>Contact</h2>
                     </FieldTitle>
                     <FieldDescription>
-                        Contact me if you’re interested in an original artwork, commission or even just fancy saying hi!
+                        {`Contact me if you're interested in an original artwork, commission or even just fancy saying hi!`}
                     </FieldDescription>
                     <FieldGroup>
                             <Field>
