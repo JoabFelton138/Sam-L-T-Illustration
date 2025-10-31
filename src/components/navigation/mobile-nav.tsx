@@ -8,7 +8,9 @@ import { SocialIcons } from "./social-icons";
 export function MobileNav() {
     return (
         <div className="flex flex-row justify-between items-center p-4">
-            <Image src="/logos/sams-logo-temp.webp" alt="Sam L-T Illustration Logo" width={70} height={40} />
+            <Link href="/">
+                <Image src="/logos/sams-logo-temp.webp" alt="Sam L-T Illustration Logo" width={70} height={40} />
+            </Link>
             <Sheet>
                 <SheetTrigger asChild>
                     <button className="p-2 cursor-pointer">

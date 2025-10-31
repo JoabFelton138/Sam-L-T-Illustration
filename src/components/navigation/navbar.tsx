@@ -6,13 +6,15 @@ import { SocialIcons } from "./social-icons";
 export function Navbar() {
     return (
             <div className="flex flex-col justify-center items-center space-y-8 py-6">    
-                <Image 
-                    src="/logos/sams-logo-temp.webp"
-                    alt="Sam L-T Illustration Logo"
-                    width={100}
-                    height={50}
-                    loading="eager"
-                /> 
+                <Link href="/">
+                    <Image 
+                        src="/logos/sams-logo-temp.webp"
+                        alt="Sam L-T Illustration Logo"
+                        width={100}
+                        height={50}
+                        loading="eager"
+                    /> 
+                </Link>
                 <div className="flex flex-row gap-8">
                     {menuItems.map((item) => 
                         <Link 
