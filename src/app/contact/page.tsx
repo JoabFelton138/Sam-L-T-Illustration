@@ -2,11 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Field, FieldDescription, FieldGroup, FieldLabel, FieldLegend, FieldSet, FieldTitle } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Image from "next/image";
 
 export default function Contact() {
     return (
-        <main>
-            <form className="max-w-lg mx-auto px-5 sm:px-6 lg:px-8 py-6 sm:py-5">
+        <main className="flex flex-col lg:flex-row justify-center items-center gap-8 px-5 sm:px-6 lg:px-8 py-12 sm:py-5">
+            <form className="flex-1 max-w-lg">
                 <FieldSet>
                     <FieldLegend className="sr-only">
                         Contact Form
@@ -52,6 +53,14 @@ export default function Contact() {
                     </FieldGroup>
                 </FieldSet>
             </form>
+            <div className="flex-1 max-w-lg">
+                <Image src="/eggy.webp" 
+                   alt="Eggy" 
+                   className="rounded object-contain w-full h-auto" 
+                   width={450} 
+                   height={200} 
+                />
+            </div>
         </main>
     );
 }
