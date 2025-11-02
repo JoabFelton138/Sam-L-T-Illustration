@@ -8,6 +8,10 @@ export const menuItems = [
         url: "/photography",
     },
     {
+        title: "Commissions",
+        url: "/commissions",
+    },
+    {
         title: "About",
         url: "/about",
     },
