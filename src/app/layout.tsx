@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito, Nunito_Sans, Quicksand, Rock_Salt } from "next/font/google";
 import "./globals.css";
 import { ResponsiveNav } from "@/components/navigation/responsive-nav";
+import Footer from "@/components/Footer";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -42,6 +43,7 @@ export default function RootLayout({
       >
         <ResponsiveNav />
         {children}
+        <Footer />
       </body>
     </html>
   );
