@@ -21,19 +21,15 @@ export type GalleryItem = {
 }
 
 export const illustrations: GalleryItem[] = [
+    //col 1
+    {
+        image: racoonWithStars,
+        title: "Racoon with Stars",
+        description: "Lorem ipsum dolor sit amet."
+    },
     {
         image: birdInNest,
-        title: "Bird in Nest",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: essentials,
-        title: "Essentials",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: explorer,
-        title: "Explorer",
+        title: "OctopusPainting",
         description: "Lorem ipsum dolor sit amet."
     },
     {
@@ -41,44 +37,10 @@ export const illustrations: GalleryItem[] = [
         title: "Flowers on Blue",
         description: "Lorem ipsum dolor sit amet."
     },
+    //col 2
     {
         image: frogWaterskiing,
         title: "Frog Waterskiing",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: flowerYellow,
-        title: "Flower Yellow",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: ginghamGirl,
-        title: "Gingham Girl",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: girls,
-        title: "Girls",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: octopusPainting,
-        title: "Octopus Painting",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: peach,
-        title: "Peach",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: racoonWithStars,
-        title: "Racoon with Stars",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: sharks,
-        title: "Sharks",
         description: "Lorem ipsum dolor sit amet."
     },
     {
@@ -86,4 +48,26 @@ export const illustrations: GalleryItem[] = [
         title: "Snowy",
         description: "Lorem ipsum dolor sit amet."
     },
+    {
+        image: peach,
+        title: "Peach",
+        description: "Lorem ipsum dolor sit amet."
+    },
+    //col 3
+    {
+        image: girls,
+        title: "Girls",
+        description: "Lorem ipsum dolor sit amet."
+    },
+    {
+        image: explorer,
+        title: "Explorer",
+        description: "Lorem ipsum dolor sit amet."
+    },
+
+    {
+        image: ginghamGirl,
+        title: "Gingham Girl",
+        description: "Lorem ipsum dolor sit amet."
+    }
 ]
