@@ -1,15 +1,16 @@
-import img1 from "../../public/illustrations/img1.webp";
-import img2 from "../../public/illustrations/img2.webp";
-import img3 from "../../public/illustrations/img3.webp";
-import img4 from "../../public/illustrations/img4.webp";
-import img5 from "../../public/illustrations/img5.webp";
-import img6 from "../../public/illustrations/img6.webp";
-import img7 from "../../public/illustrations/img7.webp";
-import img8 from "../../public/illustrations/img8.webp";
-import img9 from "../../public/illustrations/img9.webp";
-import img10 from "../../public/illustrations/img10.webp";
-import img11 from "../../public/illustrations/img11.webp";
-import img12 from "../../public/illustrations/img12.webp";
+import birdInNest from "../../public/illustrations/bird-in-nest.webp";
+import essentials from "../../public/illustrations/essentials.webp";
+import explorer from "../../public/illustrations/explorer.webp";
+import flowersOnBlue from "../../public/illustrations/flowers-on-blue.webp";
+import frogWaterskiing from "../../public/illustrations/frog-waterskiing.webp";
+import flowerYellow from "../../public/illustrations/flower-yellow.webp";
+import ginghamGirl from "../../public/illustrations/gingham-girl.webp";
+import girls from "../../public/illustrations/girls.webp";
+import octopusPainting from "../../public/illustrations/octopus-painting.webp";
+import peach from "../../public/illustrations/peach.webp";
+import racoonWithStars from "../../public/illustrations/racoon-with-stars.webp";
+import sharks from "../../public/illustrations/sharks.webp";
+import snowy from "../../public/illustrations/snowy.webp";
 
 import type { StaticImageData } from "next/image";
 
@@ -21,63 +22,68 @@ export type GalleryItem = {
 
 export const illustrations: GalleryItem[] = [
     {
-        image: img1,
-        title: "IMAGE 1",
+        image: birdInNest,
+        title: "Bird in Nest",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img2,
-        title: "IMAGE 2",
+        image: essentials,
+        title: "Essentials",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img12,
-        title: "IMAGE 12",
+        image: explorer,
+        title: "Explorer",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img4,
-        title: "IMAGE 4",
+        image: flowersOnBlue,
+        title: "Flowers on Blue",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img10,
-        title: "IMAGE 10",
+        image: frogWaterskiing,
+        title: "Frog Waterskiing",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img9,
-        title: "IMAGE 9",
+        image: flowerYellow,
+        title: "Flower Yellow",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img7,
-        title: "IMAGE 7",
+        image: ginghamGirl,
+        title: "Gingham Girl",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img8,
-        title: "IMAGE 8",
+        image: girls,
+        title: "Girls",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img6,
-        title: "IMAGE 6",
+        image: octopusPainting,
+        title: "Octopus Painting",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img5,
-        title: "IMAGE 5",
+        image: peach,
+        title: "Peach",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img11,
-        title: "IMAGE 11",
+        image: racoonWithStars,
+        title: "Racoon with Stars",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: img3,
-        title: "IMAGE 3",
+        image: sharks,
+        title: "Sharks",
+        description: "Lorem ipsum dolor sit amet."
+    },
+    {
+        image: snowy,
+        title: "Snowy",
         description: "Lorem ipsum dolor sit amet."
     },
 ]
