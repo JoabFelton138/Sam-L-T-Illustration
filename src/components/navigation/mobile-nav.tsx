@@ -9,7 +9,8 @@ export function MobileNav() {
     return (
         <div className="flex flex-row justify-between items-center p-4">
             <Link href="/">
-                <Image src="/logos/sams-logo-temp.webp" alt="Sam L-T Illustration Logo" width={70} height={40} />
+                {/* <Image src="/logos/sams-logo-temp.webp" alt="Sam L-T Illustration Logo" width={70} height={40} /> */}
+                <Image src="/logos/new-logo.webp" alt="Sam L-T Illustration Logo" width={70} height={99} />
             </Link>
             <Sheet>
                 <SheetTrigger asChild>

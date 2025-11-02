@@ -7,13 +7,20 @@ export function Navbar() {
     return (
             <div className="flex flex-col justify-center items-center space-y-8 py-6">    
                 <Link href="/">
-                    <Image 
+                    {/* <Image 
                         src="/logos/sams-logo-temp.webp"
                         alt="Sam L-T Illustration Logo"
                         width={100}
                         height={50}
                         loading="eager"
-                    /> 
+                    />  */}
+                    <Image 
+                        src="/logos/new-logo.webp"
+                        alt="Sam L-T Illustration Logo"
+                        width={120}
+                        height={170}
+                        loading="eager"
+                    />
                 </Link>
                 <div className="flex flex-row gap-15">
                     {menuItems.map((item) => 
