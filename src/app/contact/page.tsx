@@ -54,36 +54,44 @@ export default function Contact() {
                     <FieldDescription>
                         {`Contact me if you're interested in an original artwork, commission or even just fancy saying hi!`}
                     </FieldDescription>
-                    <FieldGroup>
+                    <FieldGroup className="gap-4">
                             <Field>
                                 <FieldLabel htmlFor="name">
                                     Full Name
                                 </FieldLabel>
                                 <Input id="name" type="text" {...form.register("name")}/>
-                                <FieldError>{form.formState.errors?.name?.message}</FieldError>
+                                <FieldError >
+                                    {form.formState.errors?.name?.message || "\u00A0"}
+                                </FieldError>
                             </Field>
                             <Field>
                                 <FieldLabel htmlFor="email">
                                     Email
                                 </FieldLabel>
                                 <Input id="email" type="email" {...form.register("email")}/>
-                                <FieldError>{form.formState.errors?.email?.message}</FieldError>
+                                <FieldError >
+                                    {form.formState.errors?.email?.message || "\u00A0"}
+                                </FieldError>
                             </Field>
                             <Field>
                                 <FieldLabel htmlFor="subject">
                                     Subject
                                 </FieldLabel>
                                 <Input id="subject" type="text" {...form.register("subject")}/>
-                                <FieldError>{form.formState.errors?.subject?.message}</FieldError>
+                                <FieldError >
+                                    {form.formState.errors?.subject?.message || "\u00A0"}
+                                </FieldError>
                             </Field>
                             <Field>
                                 <FieldLabel htmlFor="message">
                                     Message
                                 </FieldLabel>
                                 <Textarea id="message" {...form.register("message")}/>
-                                <FieldError>{form.formState.errors?.message?.message}</FieldError>
+                                <FieldError >
+                                    {form.formState.errors?.message?.message || "\u00A0"}
+                                </FieldError>
                             </Field>
-                            <div>
+                            <div className="pt-2">
                                 <Button 
                                     className="w-auto min-w-[140px] cursor-pointer bg-brand hover:bg-brand/80 text-white font-bold tracking-wide"
                                     type="submit">
@@ -97,8 +105,8 @@ export default function Contact() {
                 <Image src="/eggy.webp" 
                    alt="Eggy" 
                    className="rounded object-contain w-full h-auto" 
-                   width={450} 
-                   height={200} 
+                   width={340} 
+                   height={90} 
                 />
             </div>
         </main>
