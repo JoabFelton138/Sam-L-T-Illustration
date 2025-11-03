@@ -1,18 +1,16 @@
-import birdInNest from "../../public/illustrations/bird-in-nest.webp";
-import essentials from "../../public/illustrations/essentials.webp";
-import explorer from "../../public/illustrations/explorer.webp";
 import flowersOnBlue from "../../public/illustrations/flowers-on-blue.webp";
 import frogWaterskiing from "../../public/illustrations/frog-waterskiing.webp";
-import flowerYellow from "../../public/illustrations/flower-yellow.webp";
-import ginghamGirl from "../../public/illustrations/gingham-girl.webp";
-import girls from "../../public/illustrations/girls.webp";
-import octopusPainting from "../../public/illustrations/octopus-painting.webp";
-import peach from "../../public/illustrations/peach.webp";
-import racoonWithStars from "../../public/illustrations/racoon-with-stars.webp";
-import sharks from "../../public/illustrations/sharks.webp";
-import snowy from "../../public/illustrations/snowy.webp";
+import spooky from "../../public/illustrations/spooky.gif";
 
-import type { StaticImageData } from "next/image";
+import funkyMonkey from "../../public/illustrations/funky-monkey.webp";
+import ginghamGirl from "../../public/illustrations/gingham-girl.webp";
+import portraitLeft from "../../public/illustrations/portrait-left.webp";
+
+import portraitRight from "../../public/illustrations/portrait-right.webp";
+import bugs from "../../public/illustrations/bugs.webp";
+import tomYum from "../../public/illustrations/tom-yum.webp";
+
+import { StaticImageData } from "next/image";
 
 export type GalleryItem = {
     image: StaticImageData;
@@ -21,53 +19,52 @@ export type GalleryItem = {
 }
 
 export const illustrations: GalleryItem[] = [
-    //col 1
     {
-        image: racoonWithStars,
-        title: "Racoon with Stars",
+        image: tomYum,
+        title: "Portrait Left",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: birdInNest,
-        title: "OctopusPainting",
+        image: portraitLeft,
+        title: "Essentials",
         description: "Lorem ipsum dolor sit amet."
     },
-    {
-        image: flowersOnBlue,
-        title: "Flowers on Blue",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    //col 2
     {
         image: frogWaterskiing,
-        title: "Frog Waterskiing",
+        title: "Rainbow Halo",
+        description: "Lorem ipsum dolor sit amet."
+    },
+
+    {
+        image: flowersOnBlue,
+        title: "Spooky",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: snowy,
+        image: spooky,
         title: "Snowy",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: peach,
-        title: "Peach",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    //col 3
-    {
-        image: girls,
-        title: "Girls",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: explorer,
+        image: bugs,
         title: "Explorer",
         description: "Lorem ipsum dolor sit amet."
     },
 
     {
+        image: funkyMonkey,
+        title: "Portrait Right",
+        description: "Lorem ipsum dolor sit amet."
+    },
+    {
+        image: portraitRight,
+        title: "Flowers on Blue",
+        description: "Lorem ipsum dolor sit amet."
+    },
+    {
         image: ginghamGirl,
-        title: "Gingham Girl",
+        title: "Bugs",
         description: "Lorem ipsum dolor sit amet."
     }
+
 ]
