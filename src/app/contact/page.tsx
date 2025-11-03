@@ -1,13 +1,49 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
-import { Field, FieldDescription, FieldGroup, FieldLabel, FieldLegend, FieldSet, FieldTitle } from "@/components/ui/field";
+import { Field, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegend, FieldSet, FieldTitle } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+const formSchema = z.object({
+    name: z.string().regex(/^[a-zA-Z]{2,}\s+[a-zA-Z]{2,}$/, "Name must be two words, each at least 2 characters"),    
+    email: z.string().regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Invalid email address"),
+    subject: z.string().min(3, "Subject must be more than 3 characters")
+                       .max(100, "Subject must be less than 100 characters")
+                       .trim(),
+    message: z.string().min(10, "Message must be at least 10 characters")
+                       .max(1000, "Message must be less than 1000 characters")
+                       .trim(),
+});
 
 export default function Contact() {
+    
+    const form = useForm({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+        },
+    });
+
+    const onSubmit = async(data: z.infer<typeof formSchema>) => {
+        try {
+            console.log(data);
+            form.reset();
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <main className="flex flex-col lg:flex-row justify-center items-center gap-8 px-5 sm:px-6 lg:px-8 py-12 sm:py-5">
-            <form className="flex-1 max-w-lg">
+            <form className="flex-1 max-w-lg" onSubmit={form.handleSubmit(onSubmit)}>
                 <FieldSet>
                     <FieldLegend className="sr-only">
                         Contact Form
@@ -23,25 +59,29 @@ export default function Contact() {
                                 <FieldLabel htmlFor="name">
                                     Full Name
                                 </FieldLabel>
-                                <Input id="name" type="text"/>
+                                <Input id="name" type="text" {...form.register("name")}/>
+                                <FieldError>{form.formState.errors?.name?.message}</FieldError>
                             </Field>
                             <Field>
                                 <FieldLabel htmlFor="email">
                                     Email
                                 </FieldLabel>
-                                <Input id="name" type="email"/>
+                                <Input id="email" type="email" {...form.register("email")}/>
+                                <FieldError>{form.formState.errors?.email?.message}</FieldError>
                             </Field>
                             <Field>
                                 <FieldLabel htmlFor="subject">
                                     Subject
                                 </FieldLabel>
-                                <Input id="name" type="text"/>
+                                <Input id="subject" type="text" {...form.register("subject")}/>
+                                <FieldError>{form.formState.errors?.subject?.message}</FieldError>
                             </Field>
                             <Field>
                                 <FieldLabel htmlFor="message">
                                     Message
                                 </FieldLabel>
-                                <Textarea id="message" />
+                                <Textarea id="message" {...form.register("message")}/>
+                                <FieldError>{form.formState.errors?.message?.message}</FieldError>
                             </Field>
                             <div>
                                 <Button 
