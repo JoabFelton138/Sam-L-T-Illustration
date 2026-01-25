@@ -1,13 +1,27 @@
-import { illustrations } from "@/lib/illustrations";
+'use client';
+
+import { GalleryItem, illustrations } from "@/lib/illustrations";
 import { photos } from "@/lib/photos";
 import Image from "next/image";
+import { ImageDialog } from "./ImageDialog";
+import { useState } from "react";
 
 interface LightboxGalleryProps {
     content: 'illustrations' | 'photography';
 }
 
+
 export function LightboxGallery({ content} : LightboxGalleryProps) {
+
     const images =  content === 'illustrations' ? illustrations : photos;
+    const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
+    const [open, setOpen] = useState(false);
+
+    const handleImageClick = (item: GalleryItem) => {
+        setSelectedItem(item);
+        setOpen(true);
+    }
+    
     return (
         <div className="mx-auto max-w-7xl p-4">
             <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
@@ -18,6 +32,7 @@ export function LightboxGallery({ content} : LightboxGalleryProps) {
                             src={image.image} 
                             alt={image.title} 
                             className="w-full h-auto rounded block transition-transform duration-300 ease-out group-hover:scale-[1.03] will-change-transform" 
+                            onClick={() => handleImageClick(image)}
                         />
                         <div className="pointer-events-none absolute inset-0 rounded bg-white/55 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100" />
                         <div className="pointer-events-none absolute top-0 left-0">
@@ -28,6 +43,13 @@ export function LightboxGallery({ content} : LightboxGalleryProps) {
                     </div>
                 )}
             </div>
+            <ImageDialog 
+                open={open} 
+                onOpenChange={setOpen} 
+                imageUrl={selectedItem?.image.src || ''} 
+                title={selectedItem?.title || ''} 
+                description={selectedItem?.description || ''} 
+            />
         </div>
     );
 }
