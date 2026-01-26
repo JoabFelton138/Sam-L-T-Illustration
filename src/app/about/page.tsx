@@ -1,20 +1,14 @@
 "use client";
 
+import { useFadeIn } from "@/hooks/use-fade-in";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export default function About() {
     const imageRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (imageRef.current) {
-            imageRef.current.classList.add('animate-fade-in-up');
-        }
-        if (textRef.current) {
-            textRef.current.classList.add('animate-fade-in-up');
-        }
-    }, []);
+    useFadeIn([imageRef, textRef]);
 
     return (
         <main>
