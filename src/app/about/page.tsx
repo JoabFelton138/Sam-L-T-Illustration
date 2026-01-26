@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export default function About() {
-    const imageRef = useRef<HTMLImageElement>(null);
+    const imageRef = useRef<HTMLDivElement>(null);
     const textRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
