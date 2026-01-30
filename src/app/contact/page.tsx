@@ -49,7 +49,8 @@ export default function Contact() {
 
     return (
         <main className="flex flex-col xl:flex-row justify-center items-center gap-8 px-5 sm:px-6 lg:px-8 py-12 sm:py-5">
-            <div ref={textRef} className="order-2 xl:order-1">                <form className="flex-1 max-w-lg" onSubmit={form.handleSubmit(onSubmit)}>
+            <div ref={textRef} className="order-2 xl:order-1">                
+                <form className="flex-1 max-w-lg" onSubmit={form.handleSubmit(onSubmit)}>
                     <FieldSet>
                         <FieldLegend className="sr-only">
                             Contact Form
@@ -108,11 +109,12 @@ export default function Contact() {
                     </FieldSet>
                 </form>
             </div>
-            <div ref={imageRef} className="flex-1 max-w-lg hidden md:block order-1 xl:order-2">                <Image src="/eggy.webp" 
+            <div ref={imageRef} className="flex hidden md:block order-1 xl:order-2">                
+                <Image src="/eggy.webp" 
                    alt="Eggy" 
                    className="rounded object-contain w-full h-auto" 
-                   width={340} 
-                   height={90} 
+                   width={420} 
+                   height={110} 
                 />
             </div>
         </main>
