@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { useEffect, useRef } from "react";  
+import { useRef } from "react";  
 import { useFadeIn } from "@/hooks/use-fade-in";
 
 const formSchema = z.object({
