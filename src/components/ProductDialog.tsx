@@ -16,7 +16,7 @@ export const ProductDialog = ({open, onOpenChange, imageUrl, altText, title, des
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="max-w-5xl p-0 overflow-hidden border-0 shadow-none sm:max-w-5xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 min-h-0">
+                <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] min-h-0">
                     <div className="p-0">
                         <Image
                             src={imageUrl}
@@ -28,8 +28,8 @@ export const ProductDialog = ({open, onOpenChange, imageUrl, altText, title, des
                     </div>
                     <div className="bg-white p-6 overflow-y-auto flex flex-col gap-4 justify-center">
                         <DialogTitle>{title}</DialogTitle>
-                        <p>{description}</p>
                         <p>£{price}</p>
+                        <p>{description}</p>
                         <Button 
                             className="w-fit cursor-pointer bg-brand hover:bg-brand/80 text-white font-bold tracking-wide">
                             Add to Cart
