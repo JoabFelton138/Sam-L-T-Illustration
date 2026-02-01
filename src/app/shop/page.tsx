@@ -46,7 +46,7 @@ export default function Shop () {
                                         alt={product.title} 
                                         width={300} 
                                         height={300} 
-                                        className="rounded transition-transform duration-300 ease-out group-hover:scale-[1.03] will-change-transform"
+                                        className="rounded transition-transform duration-300 ease-out group-hover:scale-[1.03] will-change-transform cursor-pointer"
                                         onClick={() => handleItemClick(product)}
                                     />
                                 </div>
