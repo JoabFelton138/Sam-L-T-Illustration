@@ -52,7 +52,9 @@ export default function Shop () {
                                 </div>
                                 <div className="flex flex-col space-y-1 items-center">
                                     <p>{product.title}</p>
-                                    <p>£{product.priceRange.minVariantPrice.amount}</p>
+                                    <div className="flex flex-col gap-2">
+                                        <p>£{product.priceRange.minVariantPrice.amount}</p>
+                                    </div>
                                 <Button
                                     size="sm"                                     
                                     className="w-fit cursor-pointer bg-brand hover:bg-brand/80 text-white font-bold tracking-wide"
