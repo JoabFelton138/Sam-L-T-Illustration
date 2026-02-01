@@ -5,8 +5,7 @@ import egg3 from "../../public/photography/egg3.webp";
 import color from "../../public/photography/colorful.webp";
 import smiths from "../../public/photography/smiths-custom.webp";
 import thailand from "../../public/photography/thailand.webp";
-import bangkok from "../../public/photography/bangkok.webp";
-
+import brodie from "../../public/photography/brodie.webp";
 import type { GalleryItem } from "./illustrations";
 
 export const photos: GalleryItem[] = [
@@ -16,17 +15,17 @@ export const photos: GalleryItem[] = [
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: egg1,
-        title: "Flowers",
+        image: thailand,
+        title: "Waterskiing",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: egg2,
+        image: smiths,
         title: "Funky Monkey",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: egg3,
+        image: egg1,
         title: "Portrait",
         description: "Lorem ipsum dolor sit amet."
     },
@@ -36,8 +35,13 @@ export const photos: GalleryItem[] = [
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: thailand,
-        title: "Waterskiing",
+        image: egg3,
+        title: "Flowers",
         description: "Lorem ipsum dolor sit amet."
-    }
+    },
+    {
+        image: brodie,
+        title: "Flowers",
+        description: "Lorem ipsum dolor sit amet."
+    },
 ]
