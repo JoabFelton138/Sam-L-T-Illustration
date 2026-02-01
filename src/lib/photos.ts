@@ -1,154 +1,43 @@
-import flowersOnBlue from "../../public/illustrations/flowers-on-blue.webp";
-import frogWaterskiing from "../../public/illustrations/frog-waterskiing.webp";
-import spooky from "../../public/illustrations/spooky.gif";
-
-import funkyMonkey from "../../public/illustrations/funky-monkey.webp";
-import ginghamGirl from "../../public/illustrations/gingham-girl.webp";
-import portraitLeft from "../../public/illustrations/portrait-left.webp";
-
-import portraitRight from "../../public/illustrations/portrait-right.webp";
-import bugs from "../../public/illustrations/bugs.webp";
-import tomYum from "../../public/illustrations/tom-yum.webp";
+import bk from "../../public/photography/bangkok.webp";
+import egg1 from "../../public/photography/egg1.webp";
+import egg2 from "../../public/photography/egg2.webp";
+import egg3 from "../../public/photography/egg3.webp";
+import color from "../../public/photography/colorful.webp";
+import smiths from "../../public/photography/smiths-custom.webp";
+import thailand from "../../public/photography/thailand.webp";
+import bangkok from "../../public/photography/bangkok.webp";
 
 import type { GalleryItem } from "./illustrations";
 
 export const photos: GalleryItem[] = [
     {
-        image: tomYum,
+        image: bk,
         title: "Tom Yum",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: flowersOnBlue,
+        image: egg1,
         title: "Flowers",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: funkyMonkey,
+        image: egg2,
         title: "Funky Monkey",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: portraitLeft,
+        image: egg3,
         title: "Portrait",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: spooky,
+        image: color,
         title: "Spooky",
         description: "Lorem ipsum dolor sit amet."
     },
     {
-        image: portraitRight,
-        title: "Portrait",
-        description: "Lorem ipsum dolor sit amet."
-    },
-
-    {
-        image: frogWaterskiing,
+        image: thailand,
         title: "Waterskiing",
         description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: bugs,
-        title: "Bugs",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: ginghamGirl,
-        title: "Bugs",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: tomYum,
-        title: "Tom Yum",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: flowersOnBlue,
-        title: "Flowers",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: funkyMonkey,
-        title: "Funky Monkey",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: portraitLeft,
-        title: "Portrait",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: spooky,
-        title: "Spooky",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: portraitRight,
-        title: "Portrait",
-        description: "Lorem ipsum dolor sit amet."
-    },
-
-    {
-        image: frogWaterskiing,
-        title: "Waterskiing",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: bugs,
-        title: "Bugs",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: ginghamGirl,
-        title: "Bugs",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: tomYum,
-        title: "Tom Yum",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: flowersOnBlue,
-        title: "Flowers",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: funkyMonkey,
-        title: "Funky Monkey",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: portraitLeft,
-        title: "Portrait",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: spooky,
-        title: "Spooky",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: portraitRight,
-        title: "Portrait",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: frogWaterskiing,
-        title: "Waterskiing",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: bugs,
-        title: "Bugs",
-        description: "Lorem ipsum dolor sit amet."
-    },
-    {
-        image: ginghamGirl,
-        title: "Bugs",
-        description: "Lorem ipsum dolor sit amet."
-    },
-
+    }
 ]
