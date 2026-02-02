@@ -22,45 +22,61 @@ interface ProductDialogProps {
 const quantity = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const buttonClass = "w-fit cursor-pointer bg-brand hover:bg-brand/80 text-white font-bold tracking-wide";
 
-export const ProductDialog = ({open, onOpenChange, imageUrl, altText, title, description, price} : ProductDialogProps) => {
+export const ProductDialog = ({
+    open,
+    onOpenChange,
+    imageUrl,
+    altText,
+    title,
+    description,
+    price,
+}: ProductDialogProps) => {
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="p-0 overflow-hidden border-0 shadow-none sm:max-w-5xl">
+            <DialogContent className="w-[95vw] max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-5xl p-0 overflow-hidden border-0 shadow-none">
                 <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] min-h-0">
-                    <div className="p-0">
-                        <Image
-                            src={imageUrl}
-                            alt={altText ?? ''}
-                            width={500}
-                            height={500}
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
+                    <Image
+                        src={imageUrl}
+                        alt={altText ?? ""}
+                        width={500}
+                        height={500}
+                        className="w-full h-full object-cover"
+                    />
                     <div className="bg-white p-6 overflow-y-auto flex flex-col gap-4 justify-center">
                         <DialogTitle>{title}</DialogTitle>
                         <p>£{price}</p>
-
                         <div className="flex flex-row items-center gap-2">
-                            <label htmlFor="form-quantity" className="text-sm font-medium text-[#2C3E50] shrink-0">
+                            <label
+                                htmlFor="form-quantity"
+                                className="text-sm font-medium text-[#2C3E50] shrink-0"
+                            >
                                 Quantity
                             </label>
                             <Select defaultValue="1">
-                                <SelectTrigger id="form-quantity" className="w-16">
+                                <SelectTrigger
+                                    id="form-quantity"
+                                    className="w-16"
+                                >
                                     <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent>
-                                    {quantity.map((q) => 
-                                        <SelectItem key={q} value={q.toString()}>{q}</SelectItem>
-                                    )}
+                                    {quantity.map((q) => (
+                                        <SelectItem
+                                            key={q}
+                                            value={q.toString()}
+                                        >
+                                            {q}
+                                        </SelectItem>
+                                    ))}
                                 </SelectContent>
                             </Select>
                         </div>
                         <p>{description}</p>
                         <div className="flex flex-row items-center gap-2">
-                            <Button className={`${buttonClass}`}>
+                            <Button className={buttonClass}>
                                 Add to Cart
                             </Button>
-                            <Button className={`${buttonClass}`}>
+                            <Button className={buttonClass}>
                                 View Cart
                             </Button>
                         </div>
@@ -69,4 +85,4 @@ export const ProductDialog = ({open, onOpenChange, imageUrl, altText, title, des
             </DialogContent>
         </Dialog>
     );
-}
+};
