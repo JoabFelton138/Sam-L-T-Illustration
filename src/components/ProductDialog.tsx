@@ -20,6 +20,7 @@ interface ProductDialogProps {
 }
 
 const quantity = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const buttonClass = "w-fit cursor-pointer bg-brand hover:bg-brand/80 text-white font-bold tracking-wide";
 
 export const ProductDialog = ({open, onOpenChange, imageUrl, altText, title, description, price} : ProductDialogProps) => {
     return (
@@ -55,10 +56,14 @@ export const ProductDialog = ({open, onOpenChange, imageUrl, altText, title, des
                             </Select>
                         </div>
                         <p>{description}</p>
-                        <Button 
-                            className="w-fit cursor-pointer bg-brand hover:bg-brand/80 text-white font-bold tracking-wide">
-                            Add to Cart
-                        </Button>
+                        <div className="flex flex-row items-center gap-2">
+                            <Button className={`${buttonClass}`}>
+                                Add to Cart
+                            </Button>
+                            <Button className={`${buttonClass}`}>
+                                View Cart
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </DialogContent>

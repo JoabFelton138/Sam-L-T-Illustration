@@ -46,21 +46,15 @@ export default function Shop () {
                                         alt={product.title} 
                                         width={300} 
                                         height={300} 
-                                        className="rounded transition-transform duration-300 ease-out group-hover:scale-[1.03] will-change-transform cursor-pointer"
+                                        className="rounded transition-transform duration-300 ease-out group-hover:scale-[1.05] will-change-transform cursor-pointer"
                                         onClick={() => handleItemClick(product)}
                                     />
                                 </div>
-                                <div className="flex flex-col space-y-1 items-center">
-                                    <p>{product.title}</p>
+                                <div className="flex flex-col space-y-2 items-center">
+                                    <p className="font-semibold">{product.title}</p>
                                     <div className="flex flex-col gap-2">
                                         <p>£{product.priceRange.minVariantPrice.amount}</p>
                                     </div>
-                                <Button
-                                    size="sm"                                     
-                                    className="w-fit cursor-pointer bg-brand hover:bg-brand/80 text-white font-bold tracking-wide"
-                                    >
-                                        Add to Cart
-                                    </Button>
                                 </div>
                             </div>
                         )
