@@ -25,7 +25,7 @@ const buttonClass = "w-fit cursor-pointer bg-brand hover:bg-brand/80 text-white 
 export const ProductDialog = ({open, onOpenChange, imageUrl, altText, title, description, price} : ProductDialogProps) => {
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="max-w-5xl p-0 overflow-hidden border-0 shadow-none sm:max-w-5xl">
+            <DialogContent className="p-0 overflow-hidden border-0 shadow-none sm:max-w-5xl">
                 <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] min-h-0">
                     <div className="p-0">
                         <Image
