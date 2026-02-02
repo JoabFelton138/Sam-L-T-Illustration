@@ -39,7 +39,6 @@ export function LightboxGallery({ content} : LightboxGalleryProps) {
         setIsLoading(true);
         setShowSpinner(true);
 
-        // Simulate loading delay, then add images
         setTimeout(() => {
             setCurrentIndex(prevIndex => prevIndex + 6);
             setIsLoading(false);
