@@ -20,6 +20,10 @@ export const menuItems = [
         url: "/shop",
     },
     {
+        title: "Basket",
+        url: "/basket",
+    },
+    {
         title: "Contact",
         url: "/contact",
     },

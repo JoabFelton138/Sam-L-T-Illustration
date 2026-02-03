@@ -74,10 +74,10 @@ export const ProductDialog = ({
                         <p>{description}</p>
                         <div className="flex flex-row items-center gap-2">
                             <Button className={buttonClass}>
-                                Add to Cart
+                                Add to Basket
                             </Button>
                             <Button className={buttonClass}>
-                                View Cart
+                                View Basket
                             </Button>
                         </div>
                     </div>
