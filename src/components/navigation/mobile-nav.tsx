@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MenuIcon } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
 import { SocialIcons } from "./social-icons";
+import { BasketCount } from "./basket-count";
 
 export function MobileNav() {
     return (
@@ -21,16 +22,24 @@ export function MobileNav() {
                 <SheetContent side="left" hideClose className="w-60 sm:w-70 md:w-80">
                     <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                     <div className="flex h-full flex-col gap-6 py-16 px-6">
-
                         <nav className="flex flex-col space-y-6">
                             {menuItems.map((item) => (
-                            <Link
-                                key={item.title}
-                                href={item.url}
-                                className="tracking-widest font-medium text-[11px] sm:text-xs md:text-[13px] text-brand hover:text-brand-hover hover:bg-transparent"
-                            >
-                                {item.title.toUpperCase()}
-                            </Link>
+                                <div key={item.title} 
+                                     className={item.title === "Basket" ? "flex items-center relative gap-2" : ""}
+                                >
+                                    <Link
+                                        key={item.title}
+                                        href={item.url}
+                                        className="tracking-widest font-medium text-[11px] sm:text-xs md:text-[13px] text-brand hover:text-brand-hover hover:bg-transparent"
+                                    >
+                                        {item.title.toUpperCase()}
+                                    </Link>
+                                    {item.title === "Basket" && (
+                                <span>
+                                    <BasketCount/>
+                                </span>
+                            )}
+                                </div>
                             ))}
                         </nav>
                         <div className="mt-auto pt-6">

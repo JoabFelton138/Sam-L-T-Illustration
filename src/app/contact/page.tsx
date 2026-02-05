@@ -48,7 +48,7 @@ export default function Contact() {
     };
 
     return (
-        <main className="flex flex-col xl:flex-row justify-center items-center gap-8 px-5 sm:px-6 lg:px-8 py-12 sm:py-5">
+        <main className="flex flex-col xl:flex-row justify-center items-center gap-14 px-5 sm:px-6 lg:px-8 py-12 sm:py-5 max-w-7xl mx-auto">
             <div ref={textRef} className="order-2 xl:order-1">                
                 <form className="flex-1 max-w-lg" onSubmit={form.handleSubmit(onSubmit)}>
                     <FieldSet>
