@@ -16,7 +16,7 @@ export const ImageDialog = ({open, onOpenChange, imageUrl, altText, title, descr
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent variant="image" className="bg-transparent border-0 shadow-none data-[state=open]:zoom-in-100 data-[state=closed]:zoom-out-100">
+            <DialogContent variant="image" className="bg-transparent border-0 shadow-none data-[state=open]:animate-none data-[state=closed]:animate-none">                
                 <DialogTitle className="sr-only">{title}</DialogTitle>
                 <div className="relative inline-block">
                     <img
