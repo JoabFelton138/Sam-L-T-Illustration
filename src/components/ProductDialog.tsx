@@ -33,14 +33,14 @@ export const ProductDialog = ({
 }: ProductDialogProps) => {
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
-            <DialogContent className="w-[95vw] max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-5xl max-h-[80vh] p-0 overflow-hidden border-0 shadow-none">                
+            <DialogContent className="w-[95vw] max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-5xl max-h-[90vh] p-0 overflow-hidden border-0 shadow-none">                
                 <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] min-h-0">
                     <Image
                         src={imageUrl}
                         alt={altText ?? ""}
                         width={500}
                         height={500}
-                        className="w-full h-full max-h-[50vh] object-cover"
+                        className="w-full h-full object-cover max-h-[50vh] md:max-h-none"
                     />
                     <div className="bg-white p-6 overflow-y-auto flex flex-col gap-4 justify-center">
                         <DialogTitle>{title}</DialogTitle>
