@@ -36,7 +36,7 @@ export function Navbar() {
                             </Link>
                         ))}
                     </div>
-                    <div className="w-24 md:w-32 shrink0"/>
+                    <div className="w-24 md:w-16 xl:w-32 shrink-0"/>
                     <div className="flex flex-row justify-start gap-6 md:gap-10 lg:gap-14 flex-1">
                         {rightNavItems.map((navLink) => (
                             <Link key={navLink.title} href={navLink.url}    
