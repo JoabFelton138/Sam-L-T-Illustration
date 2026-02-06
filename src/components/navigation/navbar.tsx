@@ -23,7 +23,7 @@ export function Navbar() {
                         loading="eager"
                     />
                 </Link>
-                <div className="flex flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-26">
+                <div className="flex flex-row gap-8 sm:gap-10 md:gap-12 lg:gap-20 xl:gap-26">
                     {menuItems.map((item) => 
                         <div key={item.title} 
                              className={item.title === "Basket" ? "flex items-center relative gap-1" : ""}>
