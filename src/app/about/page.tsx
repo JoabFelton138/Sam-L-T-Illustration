@@ -17,12 +17,12 @@ export default function About() {
                 <div ref={imageRef} className="grid grid-cols-1 xl:grid-cols-2 items-center gap-8 max-w-7xl mx-auto">                
                     <Image
                         src="/about-me.webp"
-                        className="justify-self-center rounded object-cover aspect-square"
+                        className="justify-self-center rounded object-cover aspect-square max-w-[500px] lg:max-w-[575px]"
                         alt="sam"
                         width={575}
                         height={575}
                     />
-                    <div ref={textRef} className="space-y-2 max-w-[500px] lg:max-w-[600px]">
+                    <div ref={textRef} className="space-y-2 max-w-[500px] lg:max-w-[575px]">
                         <h2>{`Hey, I'm Sam!`}</h2>
                         <p className={textSize}>I’m a British illustrator and artist based in Bangkok, exploring film photography and obsessed with my cat, Egg.</p>
                         <p className={textSize}>In my early days, you’d find me tearing around the streets of Birmingham with friends—climbing trees, building forts, inventing entire worlds in our local park, and zooming downhill on skates. Creativity has always been rooted in play, curiosity, and adventure for me. </p>
