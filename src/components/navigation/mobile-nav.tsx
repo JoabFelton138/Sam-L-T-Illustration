@@ -35,10 +35,10 @@ export function MobileNav() {
                                         {item.title.toUpperCase()}
                                     </Link>
                                     {item.title === "Basket" && (
-                                <span>
-                                    <BasketCount/>
-                                </span>
-                            )}
+                                        <span>
+                                            <BasketCount/>
+                                        </span>
+                                    )}
                                 </div>
                             ))}
                         </nav>
