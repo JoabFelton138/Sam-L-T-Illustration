@@ -1,27 +1,10 @@
 "use client";
 import { ProductDialog } from "@/components/ProductDialog";
-import { Button } from "@/components/ui/button";
 import {storeMockResponse} from "@/lib/storeMockResponse";
+import { Product } from "@/types/types";
 import Image from "next/image";
 import { useState } from "react";
 
-interface Product {
-    id: string;
-    title: string;
-    handle: string;
-    description: string;
-    availableForSale: boolean;
-    priceRange: {
-        minVariantPrice: { amount: string; currencyCode: string };
-        maxVariantPrice: { amount: string; currencyCode: string };
-    };
-    featuredImage: {
-        url: string;
-        altText?: string;
-        width?: number;
-        height?: number;
-    };
-}
 
 export default function Shop () {
     const products = storeMockResponse.data.products.edges.map((edge) => edge.node);
@@ -65,11 +48,7 @@ export default function Shop () {
             <ProductDialog
                 open={open}
                 onOpenChange={setOpen}
-                imageUrl={selectedItem?.featuredImage?.url ?? ''}
-                altText={selectedItem?.title || ''}
-                title={selectedItem?.title || ''}
-                description={selectedItem?.description || ''}
-                price={selectedItem ? parseFloat(selectedItem.priceRange.minVariantPrice.amount) : 0}
+                product={selectedItem}
             />
         </main>
     );
