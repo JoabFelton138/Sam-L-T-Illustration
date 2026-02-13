@@ -39,12 +39,18 @@ export function Navbar() {
                     <div className="w-24 md:w-16 xl:w-32 shrink-0"/>
                     <div className="flex flex-row justify-start gap-6 md:gap-10 lg:gap-14 flex-1">
                         {rightNavItems.map((navLink) => (
-                            <Link key={navLink.title} href={navLink.url}    
-                                className="tracking-widest font-medium text-[11px] sm:text-xs md:text-[13px] text-brand hover:text-brand-hover hover:bg-transparent">
-                                {navLink.title.toUpperCase()}
-                            </Link>
-                        )
-                    )}
+                            <div key={navLink.title} className="relative flex items-center">
+                                <Link href={navLink.url}    
+                                    className="tracking-widest font-medium text-[11px] sm:text-xs md:text-[13px] text-brand hover:text-brand-hover hover:bg-transparent">
+                                    {navLink.title.toUpperCase()}
+                                </Link>
+                                {navLink.title === "Basket" && (
+                                    <span className="absolute -top-2 -right-6">
+                                        <BasketCount/>
+                                    </span>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <SocialIcons gap="gap-5" />
