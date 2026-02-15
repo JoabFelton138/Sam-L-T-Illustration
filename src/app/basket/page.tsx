@@ -27,7 +27,7 @@ export default function Basket() {
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-8">
                         <div className="divide-y">
                             {items.map((item) => (
-                                <div key={item.product.id} className="flex flex-row gap-8 py-8">
+                                <div key={item.product.id} className="flex flex-row gap-8 py-8 items-center justify-center lg:justify-start">
                                     <Image 
                                         src={item.product.featuredImage.url}
                                         alt={item.product.featuredImage.altText ?? ""}
@@ -45,6 +45,7 @@ export default function Basket() {
                                 </div>
                             ))}
                         </div>
+                        <div className="lg:hidden border-t border-dashed border-gray-300"/>
                         {items.length > 0 && (
                             <div className="border rounded-lg p-6 mt-6 h-fit">
                                 <div className="flex flex-col gap-4 items-center justify-center">
@@ -62,7 +63,7 @@ export default function Basket() {
                             </div>
                         )}
                     </div>
-                <div className="border-t border-dashed border-gray-300"/>
+                <div className="hidden lg:block border-t border-dashed border-gray-300"/>
             </section>
         </main>
     );
