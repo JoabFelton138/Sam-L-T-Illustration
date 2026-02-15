@@ -14,38 +14,55 @@ export default function Basket() {
 
     return (
         <main>
-            <section className="grid p-6 min-h-[60vh] place-content-center">
-                <div className="flex flex-col items-center justify-center gap-8 text-center max-w-md mx-auto">
-                    <div className="flex flex-col gap-4">
-                        {items.map((item) => (
-                            <div key={item.product.id} className="flex flex-row gap-4">
-                                <Image 
-                                    src={item.product.featuredImage.url}
-                                    alt={item.product.featuredImage.altText ?? ""}
-                                    width={150}
-                                    height={150}
-                                />
-                                <div className="flex flex-col gap-2 items-start justify-center">
-                                    <p>{item.product.title}</p>
-                                    <p>£{item.product.priceRange.minVariantPrice.amount}</p>
-                                    <p>{item.quantity}</p>
+            <section className="max-w-5xl mx-auto px-4">
+                <div className="flex flex-col items-center justify-center pt-2 pb-8">
+                    <h2>Basket</h2>
+                </div>
+                <div className="border-t border-dashed border-gray-300"/>
+                    {items.length === 0 && (
+                        <div className="flex flex-col items-center justify-center py-12">
+                            <p className="font-medium">Your basket is empty.</p>
+                        </div>
+                    )}
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-8">
+                        <div className="divide-y">
+                            {items.map((item) => (
+                                <div key={item.product.id} className="flex flex-row gap-8 py-8">
+                                    <Image 
+                                        src={item.product.featuredImage.url}
+                                        alt={item.product.featuredImage.altText ?? ""}
+                                        width={150}
+                                        height={150}
+                                        className="rounded"
+                                    />
+                                    <div className="flex flex-col gap-2 items-center justify-center">
+                                        <p className="font-medium">{item.product.title}</p>
+                                        <p className="text-muted-foreground">£{item.product.priceRange.minVariantPrice.amount}</p>
+                                        <div className="border rounded w-16 px-3 py-1 text-center">
+                                            {item.quantity}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        {items.length > 0 && (
+                            <div className="border rounded-lg p-6 mt-6 h-fit">
+                                <div className="flex flex-col gap-4 items-center justify-center">
+                                    <p className="text-muted-foreground">
+                                        {totalItems} items
+                                    </p>
+                                    <p className={checkOutBoxFontClass}>
+                                        Total: £{total}
+                                    </p>
+                                    <Button className={buttonClass}>
+                                        <WalletIcon className="w-full" />
+                                        Checkout
+                                    </Button>
                                 </div>
                             </div>
-                        ))}
+                        )}
                     </div>
-                    <div className="flex flex-col gap-2">
-                        <p>
-                            {totalItems} items
-                        </p>
-                        <p className={checkOutBoxFontClass}>
-                            Total: £{total}
-                        </p>
-                        <Button className={buttonClass}>
-                            <WalletIcon className="w-4 h-4" />
-                            Checkout
-                        </Button>
-                    </div>
-                </div>
+                <div className="border-t border-dashed border-gray-300"/>
             </section>
         </main>
     );
