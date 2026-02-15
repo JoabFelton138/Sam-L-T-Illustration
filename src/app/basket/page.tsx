@@ -1,4 +1,5 @@
 "use client";
+import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { useBasketStore } from "@/store/basket-store";
 import { WalletIcon } from "lucide-react";
@@ -15,9 +16,7 @@ export default function Basket() {
     return (
         <main>
             <section className="max-w-5xl mx-auto px-4">
-                <div className="flex flex-col items-center justify-center pt-2 pb-8">
-                    <h2>Basket</h2>
-                </div>
+                <Header title="Basket" />
                 <div className="border-t border-dashed border-gray-300"/>
                     {items.length === 0 && (
                         <div className="flex flex-col items-center justify-center py-12">

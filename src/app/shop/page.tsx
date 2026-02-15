@@ -1,4 +1,5 @@
 "use client";
+import { Header } from "@/components/Header";
 import { ProductDialog } from "@/components/ProductDialog";
 import {storeMockResponse} from "@/lib/storeMockResponse";
 import { Product } from "@/types/types";
@@ -17,7 +18,8 @@ export default function Shop () {
     }
 
     return(
-        <main className="p-4">
+        <main>
+            <Header title="Shop" />
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-6 max-w-6xl mx-auto justify-items-center">
                 {
                     products.map((product) => {
