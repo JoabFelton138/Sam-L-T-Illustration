@@ -1,5 +1,6 @@
 "use client";
 
+import { Header } from "@/components/Header";
 import { useFadeIn } from "@/hooks/use-fade-in";
 import Image from "next/image";
 import { useRef } from "react";
@@ -13,17 +14,17 @@ export default function About() {
 
     return (
         <main>
-            <section className="grid px-6 py-12">                
-                <div ref={imageRef} className="grid grid-cols-1 xl:grid-cols-2 items-center gap-8 max-w-7xl mx-auto">                
+            <Header title="Hey, I'm Sam!" />
+            <section className="grid px-6">  
+                <div ref={imageRef} className="grid grid-cols-1 xl:grid-cols-2 items-center gap-6 lg:gap-1 max-w-7xl mx-auto">                
                     <Image
                         src="/about-me.webp"
-                        className="justify-self-center rounded object-cover aspect-square max-w-[500px] lg:max-w-[575px]"
+                        className="justify-self-center rounded object-cover aspect-square w-full max-w-[500px] lg:max-w-[525px]"
                         alt="sam"
-                        width={575}
-                        height={575}
+                        width={525}
+                        height={525}
                     />
                     <div ref={textRef} className="space-y-2 max-w-[500px] lg:max-w-[575px]">
-                        <h2>{`Hey, I'm Sam!`}</h2>
                         <p className={textSize}>I’m a British illustrator and artist based in Bangkok, exploring film photography and obsessed with my cat, Egg.</p>
                         <p className={textSize}>In my early days, you’d find me tearing around the streets of Birmingham with friends—climbing trees, building forts, inventing entire worlds in our local park, and zooming downhill on skates. Creativity has always been rooted in play, curiosity, and adventure for me. </p>
                         <p className={textSize}>I graduated from the Cambridge School of Art in 2017 with a BA in Illustration. Shortly after, my path shifted towards education, and I moved into special educational needs as a primary and early years teacher. I completed my training at MSTSA in 2018, taught my first class, and hold those early teaching memories very close. </p>
