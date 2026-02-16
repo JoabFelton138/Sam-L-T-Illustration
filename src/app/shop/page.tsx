@@ -18,10 +18,9 @@ export default function Shop () {
     }
 
     return(
-        <main>
+        <main className="px-4">
             <Header title="Shop" />
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-6 max-w-6xl mx-auto justify-items-center">
-                {
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-6 max-w-6xl mx-auto justify-items-center">                {
                     products.map((product) => {
                         return (
                             <div key={product.id} className="text-center flex flex-col gap-4">
