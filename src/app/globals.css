@@ -151,6 +151,7 @@
 
 .masonry-grid {
   display: flex;
+  margin-left: -16px;
   width: auto;
 }
 
