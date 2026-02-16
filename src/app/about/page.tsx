@@ -16,7 +16,7 @@ export default function About() {
         <main>
             <Header title="Hey, I'm Sam!" />
             <section className="grid px-6">  
-                <div ref={imageRef} className="grid grid-cols-1 xl:grid-cols-2 items-center gap-6 lg:gap-1 max-w-7xl mx-auto">                
+                <div ref={imageRef} className="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 md:gap-8 max-w-7xl mx-auto">                
                     <Image
                         src="/about-me.webp"
                         className="justify-self-center rounded object-cover aspect-square w-full max-w-[500px] lg:max-w-[525px]"
