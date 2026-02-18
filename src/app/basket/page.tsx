@@ -2,7 +2,7 @@
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { useBasketStore } from "@/store/basket-store";
-import { WalletIcon } from "lucide-react";
+import { WalletIcon, XIcon } from "lucide-react";
 import Image from "next/image";
 
 export default function Basket() {
@@ -12,6 +12,7 @@ export default function Basket() {
     const checkOutBoxFontClass = "text-muted-foreground text-sm sm:text-base";
     const buttonClass = "w-fit cursor-pointer bg-brand hover:bg-brand/80 text-white font-bold tracking-wide";
     const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
+    const removeItem = useBasketStore((state) => state.removeItem);
 
     return (
         <main>
@@ -34,11 +35,20 @@ export default function Basket() {
                                         height={150}
                                         className="rounded"
                                     />
-                                    <div className="flex flex-col gap-2 items-center justify-center">
+                                    <div className="flex flex-col gap-4 items-center justify-center">
                                         <p className="font-medium">{item.product.title}</p>
                                         <p className="text-muted-foreground">£{item.product.priceRange.minVariantPrice.amount}</p>
-                                        <div className="border rounded w-16 px-3 py-1 text-center">
-                                            {item.quantity}
+                                        <div className="flex flex-row gap-2 items-center justify-center">
+                                            <div className="border rounded w-16 px-3 py-1 text-center">
+                                                {item.quantity}
+                                            </div>
+                                            <Button 
+                                                className={buttonClass}
+                                                size="sm"
+                                                onClick={() => removeItem(item.product)}>
+                                                <XIcon className="w-4 h-4" />
+                                                Remove
+                                            </Button>
                                         </div>
                                     </div>
                                 </div>

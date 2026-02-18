@@ -5,6 +5,7 @@ import { BasketItem, Product } from "@/types/types";
 interface BasketStore {
     items: BasketItem[];
     addItem: (product: Product, quantity: number) => void;
+    removeItem: (product: Product) => void;
 }
 
 export const useBasketStore = create<BasketStore>()(
@@ -29,6 +30,11 @@ export const useBasketStore = create<BasketStore>()(
                         items: [...state.items, {product, quantity}],
                     }
                 }),
+            removeItem: (product) => set(
+                (state) => ({
+                    items: state.items.filter((item) => item.product.id !== product.id)
+                })
+            )
         }),
         {
             name: "basket-storage",
