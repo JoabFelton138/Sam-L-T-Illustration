@@ -6,6 +6,7 @@ interface BasketStore {
     items: BasketItem[];
     addItem: (product: Product, quantity: number) => void;
     removeItem: (product: Product) => void;
+    updateQuantity: (product: Product, quantity: number) => void;
 }
 
 export const useBasketStore = create<BasketStore>()(
@@ -34,7 +35,12 @@ export const useBasketStore = create<BasketStore>()(
                 (state) => ({
                     items: state.items.filter((item) => item.product.id !== product.id)
                 })
-            )
+            ),
+            updateQuantity: (product, quantity) => set((state) => ({
+                items: state.items.map((item) => item.product.id === product.id 
+                ? {...item, quantity}
+                : item
+            )}),)
         }),
         {
             name: "basket-storage",
