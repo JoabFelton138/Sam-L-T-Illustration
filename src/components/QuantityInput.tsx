@@ -1,5 +1,4 @@
 import { CircleMinusIcon, CirclePlusIcon } from "lucide-react";
-import { Input } from "./ui/input";
 
 interface QuantityInputProps {
     value: number;
@@ -15,17 +14,13 @@ export const QuantityInput = ({ value, onChange, quantity, max = 10 }: QuantityI
     
     return (
         <div className="flex items-center justify-center gap-1">
-            <Input 
-                disabled 
-                min={1} 
-                max={max} 
-                className="w-10" 
-                value={quantity}
-            />  
+            <span className="w-10 text-center font-medium">x {quantity}</span> 
             <button 
                 type="button"
                 aria-label="Decrease quantity"
                 onClick={decrement}
+                disabled={value <= 1}
+                className="disabled:opacity-40 disabled:cursor-not-allowed"
             >
                 <CircleMinusIcon className={iconClass}/>
             </button>
@@ -33,6 +28,8 @@ export const QuantityInput = ({ value, onChange, quantity, max = 10 }: QuantityI
                 type="button"
                 aria-label="Increase quantity"
                 onClick={increment}
+                disabled={value >= max}
+                className="disabled:opacity-40 disabled:cursor-not-allowed"
             >
                 <CirclePlusIcon className={iconClass}/>
             </button>
