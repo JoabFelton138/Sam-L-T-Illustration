@@ -38,7 +38,7 @@ export default function Basket() {
                                     <div className="flex flex-col gap-4 items-center justify-center">
                                         <p className="font-medium">{item.product.title}</p>
                                         <p className="text-muted-foreground">£{item.product.priceRange.minVariantPrice.amount}</p>
-                                        <div className="flex flex-row gap-2 items-center justify-center">
+                                        <div className="flex sm:flex-row flex-col gap-2 items-center justify-center">
                                             <div className="border rounded w-16 px-3 py-1 text-center">
                                                 {item.quantity}
                                             </div>
