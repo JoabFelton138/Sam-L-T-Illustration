@@ -88,12 +88,12 @@ export function LightboxGallery({ content} : LightboxGalleryProps) {
                         <Image 
                             src={image.image} 
                             alt={image.title} 
-                            className="w-full h-auto rounded block transition-transform duration-300 ease-out group-hover:scale-[1.03] will-change-transform" 
+                            className="w-full h-auto rounded block md:transition-transform md:duration-300 md:ease-out md:group-hover:scale-[1.03] md:will-change-transform" 
                             onClick={() => handleImageClick(image)}
                         />
-                        <div className="pointer-events-none absolute inset-0 rounded bg-white/55 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100" />
+                        <div className="pointer-events-none absolute inset-0 rounded bg-white/55 opacity-0 md:transition-opacity md:duration-200 md:group-hover:opacity-100 md:group-focus-within:opacity-100" />
                         <div className="pointer-events-none absolute top-0 left-0">
-                            <div className="m-2 font-extrabold rounded px-2 py-1 opacity-0 -translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0">
+                            <div className="m-2 font-extrabold rounded px-2 py-1 opacity-0 -translate-y-1 md:transition-all md:duration-200 md:group-hover:opacity-100 md:group-hover:translate-y-0">
                                 {image.description?.toUpperCase()}
                             </div>
                         </div>
