@@ -1,7 +1,7 @@
 "use client";
 import { Header } from "@/components/Header";
+import { QuantityInput } from "@/components/QuantityInput";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useBasketStore } from "@/store/basket-store";
 import { WalletIcon, XIcon } from "lucide-react";
 import Image from "next/image";
@@ -37,31 +37,21 @@ export default function Basket() {
                                         height={150}
                                         className="rounded"
                                     />
-                                    <div className="flex flex-col gap-4 items-center justify-center">
+                                    <div className="flex flex-col gap-3 items-center justify-center">
                                         <p className="font-medium">{item.product.title}</p>
                                         <p className="text-muted-foreground">£{item.product.priceRange.minVariantPrice.amount}</p>
-                                        <div className="flex sm:flex-row flex-col gap-2 items-center justify-center">
-                                            <Input 
-                                                value={item.quantity} 
-                                                onChange={(e) => updateQuantity(item.product, parseInt(e.target.value))} 
-                                                type="number"
-                                                min={1}
-                                                max={10}
-                                                className="w-16"
-                                                onKeyDown={(e) => {
-                                                    if (e.key !== "Tab") {
-                                                        e.preventDefault();
-                                                    }
-                                                }}
-                                            />
-                                            <Button 
-                                                className={buttonClass}
-                                                size="sm"
-                                                onClick={() => removeItem(item.product)}>
-                                                <XIcon className="w-4 h-4" />
-                                                Remove
-                                            </Button>
-                                        </div>
+                                        <QuantityInput 
+                                            onChange={(value) => updateQuantity(item.product, value)}
+                                            value={item.quantity}
+                                            quantity={item.quantity} 
+                                        />
+                                        <Button
+                                            className={buttonClass}
+                                            size="sm"
+                                            onClick={() => removeItem(item.product)}>
+                                            <XIcon className="w-4 h-4" />
+                                            Remove
+                                        </Button>
                                     </div>
                                 </div>
                             ))}
