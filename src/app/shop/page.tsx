@@ -1,9 +1,9 @@
 "use client";
 import { Header } from "@/components/Header";
-import { ProductDialog } from "@/components/ProductDialog";
 import {storeMockResponse} from "@/lib/storeMockResponse";
 import { Product } from "@/types/types";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 
@@ -25,14 +25,15 @@ export default function Shop () {
                         return (
                             <div key={product.id} className="text-center flex flex-col gap-4">
                                 <div className="w-full max-w-[300px] aspect-square overflow-hidden rounded group">
-                                    <Image 
-                                        src={product.featuredImage.url} 
-                                        alt={product.title} 
-                                        width={300} 
-                                        height={300} 
-                                        className="rounded transition-transform duration-300 ease-out group-hover:scale-[1.05] will-change-transform cursor-pointer"
-                                        onClick={() => handleItemClick(product)}
-                                    />
+                                    <Link href={`/shop/${product.handle}`}>
+                                        <Image 
+                                            src={product.featuredImage.url} 
+                                            alt={product.title} 
+                                            width={300} 
+                                            height={300} 
+                                            className="rounded transition-transform duration-300 ease-out group-hover:scale-[1.05] will-change-transform cursor-pointer"
+                                        />
+                                    </Link>
                                 </div>
                                 <div className="flex flex-col space-y-2 items-center">
                                     <p className="font-semibold">{product.title}</p>
@@ -46,11 +47,6 @@ export default function Shop () {
                 }
 
             </div>
-            <ProductDialog
-                open={open}
-                onOpenChange={setOpen}
-                product={selectedItem}
-            />
         </main>
     );
 };
