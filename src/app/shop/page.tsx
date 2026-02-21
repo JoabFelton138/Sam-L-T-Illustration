@@ -1,21 +1,11 @@
 "use client";
 import { Header } from "@/components/Header";
 import {storeMockResponse} from "@/lib/storeMockResponse";
-import { Product } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-
 
 export default function Shop () {
     const products = storeMockResponse.data.products.edges.map((edge) => edge.node);
-    const [selectedItem, setSelectedItem] = useState<Product | null>(null);
-    const [open, setOpen] = useState(false);
-
-    const handleItemClick = (item: Product) => {
-        setSelectedItem(item);
-        setOpen(true);
-    }
 
     return(
         <main className="px-4">
