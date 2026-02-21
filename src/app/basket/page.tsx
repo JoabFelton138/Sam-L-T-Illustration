@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useBasketStore } from "@/store/basket-store";
 import { WalletIcon, XIcon } from "lucide-react";
 import Image from "next/image";
+import { toast } from "sonner";
 
 export default function Basket() {
 
@@ -48,7 +49,12 @@ export default function Basket() {
                                         <Button
                                             className={buttonClass}
                                             size="sm"
-                                            onClick={() => removeItem(item.product)}>
+                                            onClick={() => 
+                                                {
+                                                    removeItem(item.product)
+                                                    toast.success(`${item.product.title} removed from basket`);
+                                                }
+                                            }>
                                             <XIcon className="w-4 h-4" />
                                             Remove
                                         </Button>
