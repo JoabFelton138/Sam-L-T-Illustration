@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useBasketStore } from "@/store/basket-store";
 import { WalletIcon, XIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { toast } from "sonner";
 
 export default function Basket() {
@@ -31,13 +32,15 @@ export default function Basket() {
                         <div className="divide-y">
                             {items.map((item) => (
                                 <div key={item.product.id} className="flex flex-row gap-8 py-8 items-center justify-center lg:justify-start">
-                                    <Image 
-                                        src={item.product.featuredImage.url}
-                                        alt={item.product.featuredImage.altText ?? ""}
-                                        width={150}
-                                        height={150}
-                                        className="rounded"
-                                    />
+                                    <Link href={`/shop/${item.product.handle}`}>
+                                        <Image 
+                                            src={item.product.featuredImage.url}
+                                            alt={item.product.featuredImage.altText ?? ""}
+                                            width={150}
+                                            height={150}
+                                            className="rounded"
+                                        />
+                                    </Link>
                                     <div className="flex flex-col gap-3 items-center justify-center">
                                         <p className="font-medium">{item.product.title}</p>
                                         <p className="text-muted-foreground">£{item.product.priceRange.minVariantPrice.amount}</p>
