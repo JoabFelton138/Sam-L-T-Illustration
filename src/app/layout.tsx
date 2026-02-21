@@ -3,6 +3,8 @@ import { Nunito, Nunito_Sans, Quicksand, Rock_Salt } from "next/font/google";
 import "./globals.css";
 import { ResponsiveNav } from "@/components/navigation/responsive-nav";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
+
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -43,6 +45,13 @@ export default function RootLayout({
       >
         <ResponsiveNav />
         {children}
+        <Toaster
+          toastOptions={{
+            classNames: {
+              success: '!bg-white !text-brand !border-brand',
+            },
+          }}
+        />
         <Footer />
       </body>
     </html>

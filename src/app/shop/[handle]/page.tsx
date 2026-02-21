@@ -11,6 +11,7 @@ import { useState, use, useRef } from "react";
 import { storeMockResponse } from "@/lib/storeMockResponse";
 import { notFound } from "next/navigation";
 import { ArrowLeftIcon } from "lucide-react";
+import { toast } from "sonner";
 
 interface ProductPageProps {
     params: Promise<{ handle: string }>;
@@ -91,7 +92,11 @@ export default function ProductPage({ params }: ProductPageProps) {
                         <div className="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
                             <Button 
                                 className={buttonClass}
-                                onClick={() => addItem(product, selectedQuantity)}
+                                onClick={() => 
+                                    {
+                                        addItem(product, selectedQuantity)
+                                        toast.success(`${selectedQuantity} ${selectedQuantity > 1 ? product.title + `s` : product.title} added to basket`);
+                                    }}
                             >
                                 Add to Basket
                             </Button>
