@@ -6,6 +6,8 @@ import Link from "next/link";
 
 export default function Shop () {
     const products = storeMockResponse.data.products.edges.map((edge) => edge.node);
+    const borderHoverEffect = "group-hover:text-brand-hover transition-colors duration-300 ease-out";
+    const soldOut = "font-semibold";
 
     return(
         <main className="px-4">
@@ -15,7 +17,13 @@ export default function Shop () {
                     products.map((product) => {
                         return (
                             <div key={product.id} className="text-center flex flex-col gap-4">
-                                <div className="w-full max-w-[300px] aspect-square overflow-hidden rounded group">
+                                <div className="w-full max-w-[300px] aspect-square overflow-hidden rounded group relative">
+                                    {!product.availableForSale && 
+                                        <div className={`flex flex-col items-center justify-center leading-none absolute top-2 right-2 z-10 w-14 h-14 rounded-full border-2 text-brand border-current ${borderHoverEffect}`}>
+                                            <span className={soldOut}>SOLD</span>
+                                            <span className={soldOut}>OUT</span>
+                                        </div>
+                                    }
                                     <Link href={`/shop/${product.handle}`}>
                                         <Image 
                                             src={product.featuredImage.url} 
