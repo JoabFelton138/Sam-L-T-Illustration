@@ -34,6 +34,7 @@ export default function ProductPage({ params }: ProductPageProps) {
     const buttonClass = "w-fit cursor-pointer bg-brand hover:bg-brand/80 text-white font-bold tracking-wide";
 
     if (!product) return notFound();
+    const productTitle = product.availableForSale ? product.title : "Sold Out";
 
     return (
         <main>
@@ -58,48 +59,61 @@ export default function ProductPage({ params }: ProductPageProps) {
                     </div>
                     
                     <div ref={detailsRef} className="space-y-4 md:space-y-6 text-center md:text-left">
-                        <Header title={product.title} className="items-center md:items-start pb-2"/>
-                        <div className="space-y-2">
-                            <p className="text-xl sm:text-2xl font-semibold">£{product.priceRange.minVariantPrice.amount}</p>
-                        </div>
                         
-                        <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">{product.description}</p>
+                        <Header title={productTitle} className="items-center md:items-start pb-2"/>
+
+                        {product.availableForSale && 
+                            <div className="space-y-2">
+                                <p className="text-xl sm:text-2xl font-semibold">£{product.priceRange.minVariantPrice.amount}</p>
+                            </div>
+                        }
                         
-                        <div className="flex flex-row items-center justify-center md:justify-start gap-3">
-                            <label
-                                htmlFor="form-quantity"
-                                className="text-sm font-medium shrink-0"
-                            >
-                                Quantity
-                            </label>
-                            <Select 
-                                value={selectedQuantity.toString()}
-                                onValueChange={(value) => setSelectedQuantity(parseInt(value))}
-                            >
-                                <SelectTrigger id="form-quantity" className="w-20">
-                                    <SelectValue />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    {quantity.map((q) => (
-                                        <SelectItem key={q} value={q.toString()}>
-                                            {q}
-                                        </SelectItem>
-                                    ))}
-                                </SelectContent>
-                            </Select>
-                        </div>
+                        <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                            {product.availableForSale 
+                                ? product.description 
+                                : "This product is currently unavailable. Stay tuned for updates!"
+                            }
+                        </p>
+                        
+                        {product.availableForSale && 
+                            <div className="flex flex-row items-center justify-center md:justify-start gap-3">
+                                <label
+                                    htmlFor="form-quantity"
+                                    className="text-sm font-medium shrink-0"
+                                >
+                                    Quantity
+                                </label>
+                                <Select 
+                                    value={selectedQuantity.toString()}
+                                    onValueChange={(value) => setSelectedQuantity(parseInt(value))}
+                                >
+                                    <SelectTrigger id="form-quantity" className="w-20">
+                                        <SelectValue />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        {quantity.map((q) => (
+                                            <SelectItem key={q} value={q.toString()}>
+                                                {q}
+                                            </SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                        }
                         
                         <div className="flex flex-wrap justify-center md:justify-start gap-3 pt-2">
-                            <Button 
-                                className={buttonClass}
-                                onClick={() => 
-                                    {
-                                        addItem(product, selectedQuantity)
-                                        toast.success(`${selectedQuantity} ${selectedQuantity > 1 ? product.title + `s` : product.title} added to basket`);
-                                    }}
-                            >
-                                Add to Basket
-                            </Button>
+                            {product.availableForSale &&
+                                <Button 
+                                    className={buttonClass}
+                                    onClick={() => 
+                                        {
+                                            addItem(product, selectedQuantity)
+                                            toast.success(`${selectedQuantity} ${selectedQuantity > 1 ? product.title + `s` : product.title} added to basket`);
+                                        }}
+                                >
+                                    Add to Basket
+                                </Button>
+                            }
                             <Button 
                                 variant="outline"
                                 className="w-fit cursor-pointer border-brand text-brand hover:bg-brand/10"
